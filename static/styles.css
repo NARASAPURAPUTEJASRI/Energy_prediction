@@ -1,0 +1,173 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #eec0e9, #b9d8ed); /* Soft gradient background */
+    color: #333;
+    text-align: center; /* Center align all elements */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 auto 40px;
+    max-width: 700px; /* Limit the paragraph width */
+}
+
+/* Image Row Styles */
+.image-row {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+}
+
+/* Project Image Styles */
+.project-image {
+    width: 380px; /* Set consistent image size */
+    height: 550; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Elegant shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+    transform: translateY(-5px) scale(1.05); /* Slight lift and zoom on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Button Styles */
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 25px; /* Circular button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px; /* Increased space below button */
+}
+
+a.btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f4f7f9; /* Light background for the container */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+form {
+    width: 100%; /* Form takes full width of the container */
+    max-width: 400px; /* Maximum width of the form */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #c9e2ec; /* Light background for the form */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Space between form fields */
+    text-align: center; /* Center-align all content */
+}
+
+/* Label Styles */
+form label {
+    margin-bottom: 5px; /* Space below the label */
+    font-size: 14px;
+    color: #333;
+}
+
+/* Input and Select Styles */
+form input,
+form select {
+    width: 80%; /* Narrower width to keep inputs compact */
+    margin: 0 auto; /* Center the inputs horizontally */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    display: block; /* Ensure block-level alignment */
+}
+
+/* Input Focus Styles */
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+}
+
+/* Submit Button Styles */
+form button[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 50%; /* Smaller width for the button */
+    margin: 10px auto 0 auto; /* Center button with top margin */
+}
+
+/* Submit Button Hover */
+form button[type="submit"]:hover {
+    background-color: #45a049;
+    transform: translateY(-3px); /* Slight upward movement */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Shadow for hover effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    form input,
+    form select,
+    form button[type="submit"] {
+        width: 90%; /* Slightly wider for smaller screens */
+    }
+}
+
+
+
+/* Result Styles */
+#result {
+    font-size: 18px; /* Slightly smaller result text */
+    font-weight: bold;
+    color: #2290df; /* Green color for the result */
+}
+/* Additional Enhancements */
+body::after {
+    content: "";
+    display: block;
+    height: 10px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb); /* Decorative gradient bar */
+    margin: 40px 0 0;
+}
+
+
+
+

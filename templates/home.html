@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Energy Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+        <h1>Welcome to the Energy Prediction Project</h1>
+        <p>
+            This project predicts the energy produced based on various parameters like temperature, pressure, 
+            reaction time, reactor type, and more. It's designed to assist in optimizing energy outputs efficiently.
+        </p>
+        <div class="image-container">
+            <img src="https://media.istockphoto.com/id/177470402/photo/plastic-resin-pellets-in-holding-hands.jpg?s=612x612&w=0&k=20&c=9-VcC_jIEiWoviN9hkyoMBdQkELXwyAgDSr__yDMbKI=" alt="Energy Image 1" class="project-image">
+            <img src="https://www.liveabout.com/thmb/bGTHAicZrNlBNI5qXKjPEi6PUA0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-183742134-56fc2b485f9b586195aa611e.jpg" alt="Energy Image 2" class="project-image">
+            
+        </div>
+        <a href="{{ url_for('predict') }}" class="btn">Go to Prediction Page</a>
+    
+</body>
+</html>

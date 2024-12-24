@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Energy Prediction</h1>
+        <form id="inputForm">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" required>
+
+            <label for="pressure">Pressure (atm):</label>
+            <input type="number" id="pressure" name="pressure" required>
+
+            <label for="reaction_time">Reaction Time (hours):</label>
+            <input type="number" id="reaction_time" name="reaction_time" required>
+
+            <label for="reactor_type">Reactor Type (0 for Batch, 1 for Continuous):</label>
+            <input type="number" id="reactor_type" name="reactor_type" required>
+
+            <label for="catalyst_conc">Catalyst Concentration (%):</label>
+            <input type="number" id="catalyst_conc" name="catalyst_conc" required>
+
+            <label for="plastic_type">Plastic Type:</label>
+            <select id="plastic_type" name="plastic_type" required>
+                <option value="0">ABS</option>
+                <option value="1">HDPE</option>
+                <option value="2">LDPE</option>
+                <option value="3">PC</option>
+                <option value="4">PET</option>
+                <option value="5">PMMA</option>
+                <option value="6">PP</option>
+                <option value="7">PS</option>
+                <option value="8">PUR</option>
+                <option value="9">PVC</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Predicted Energy Produced: <span id="result">N/A</span></h2>
+        <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#inputForm").submit(function(event) {
+            event.preventDefault();
+
+            var formData = {
+                temperature: $("#temperature").val(),
+                pressure: $("#pressure").val(),
+                reaction_time: $("#reaction_time").val(),
+                reactor_type: $("#reactor_type").val(),
+                catalyst_conc: $("#catalyst_conc").val(),
+                plastic_type: $("#plastic_type").val()
+            };
+
+            $.ajax({
+                url: "/predict",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(formData),
+                success: function(response) {
+                    $("#result").text(response.predicted_energy + " MJ");
+                },
+                error: function() {
+                    alert("An error occurred while processing the data.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
